@@ -7,30 +7,25 @@ def largestProduct(file: String, width: Int): BigInt = {
   def getAdjacentFor(gridPos: (Int, Int)): Vector[Vector[Int]] = {
     val (y, x) = gridPos
 
-    val bottom = {
+    val bottom =
       if (y + width > grid.length) Vector()
       else y.until(y + width).map(i => grid(i)(x)).toVector
-    }
 
-    val left = {
+    val left =
       if (x - width < 0) Vector()
       else x.until(x - width).by(-1).map(i => grid(y)(i)).toVector
-    }
 
-    val right = {
+    val right =
       if (x + width > grid.length) Vector()
       else x.until(x + width).map(i => grid(y)(i)).toVector
-    }
 
-    val diagBottomLeft = {
+    val diagBottomLeft =
       if (x - width < 0 || y + width > grid.length) Vector()
       else (for (i <- 0 until width) yield i).map(i => grid(y + i)(x - i)).toVector
-    }
 
-    val diagBottomRight = {
+    val diagBottomRight =
       if (x + width > grid.length || y + width > grid.length) Vector()
       else (for (i <- 0 until width) yield i).map(i => grid(y + i)(x + i)).toVector
-    }
 
     Vector(bottom, left, right, diagBottomLeft, diagBottomRight)
   }
@@ -45,4 +40,5 @@ def largestProduct(file: String, width: Int): BigInt = {
 
 val gridFile = "/Users/cristiangreco/Documents/Playground/scala-workspace/src/main/scala/euler/11-input.txt"
 val width = 4
+
 largestProduct(gridFile, width)
