@@ -17,13 +17,7 @@ def numberOfFactorsFor(n: BigInt): BigInt = {
   exponents.product
 }
 
-def triangleNumbersFor(n: BigInt): BigInt = {
-  def loop(i: BigInt, acc: BigInt): BigInt =
-    if (i <= 0) acc
-    else loop(i - 1, acc + i)
-
-  loop(n, 0)
-}
+def triangleNumbersFor(n: BigInt): BigInt = n * (n + 1) / 2
 
 val index = Stream.from(1).takeWhile(i => numberOfFactorsFor(triangleNumbersFor(i)) <= 500).last + 1
 triangleNumbersFor(index)
