@@ -7,7 +7,7 @@ def fromFile(file: String): List[String] =
   Source.fromFile(file).mkString.replaceAll("\"", "").split(",").toList
 
 
-val file = "/Users/cristiangreco/Documents/Playground/scala-workspace/src/main/scala/euler/22-input.txt"
+val file = "/Users/cristiangreco/Documents/Playground/scala-workspace/src/main/scala/euler/022-input.txt"
 
 val names = fromFile(file).sorted
 

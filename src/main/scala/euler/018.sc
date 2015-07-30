@@ -1,7 +1,7 @@
 import scala.collection.mutable
 import scala.io.Source
 
-val filename = "/Users/cristiangreco/Documents/Playground/scala-workspace/src/main/scala/euler/18-input.txt"
+val filename = "/Users/cristiangreco/Documents/Playground/scala-workspace/src/main/scala/euler/018-input.txt"
 
 val triangle = Source.fromFile(filename).mkString
   .split("\n")

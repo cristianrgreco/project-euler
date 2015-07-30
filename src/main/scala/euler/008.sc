@@ -4,7 +4,7 @@ def fromFile(file: String): List[Int] =
   Source.fromFile(file).mkString.replaceAll("[\\s]", "").map(_.asDigit).toList
 
 val filename =
-  "/Users/cristiangreco/Documents/Playground/scala-workspace/src/main/scala/euler/8a-input.txt"
+  "/Users/cristiangreco/Documents/Playground/scala-workspace/src/main/scala/euler/008a-input.txt"
 val subarraySize = 13
 
 val table = fromFile(filename)

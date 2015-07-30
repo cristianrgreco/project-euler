@@ -38,7 +38,7 @@ def largestProduct(file: String, width: Int): BigInt = {
   products.max
 }
 
-val gridFile = "/Users/cristiangreco/Documents/Playground/scala-workspace/src/main/scala/euler/11-input.txt"
+val gridFile = "/Users/cristiangreco/Documents/Playground/scala-workspace/src/main/scala/euler/011-input.txt"
 val width = 4
 
 largestProduct(gridFile, width)
