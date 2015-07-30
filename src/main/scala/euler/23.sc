@@ -31,7 +31,7 @@ def primeFactors(n: BigInt): List[Int] = {
 def isAbundant(n: BigInt, sumOfDivisors: BigInt): Boolean = sumOfDivisors > n
 
 
-val limit = 23123
+val limit = 28123
 
 val abundantNumbers = 1.to(limit).filter(i => isAbundant(i, sumOfDivisors(i, proper = true))).toVector
 val sumsOfAbundantNumbers = abundantNumbers.flatMap(i => {
