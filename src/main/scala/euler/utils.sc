@@ -67,6 +67,13 @@ Collections.partition(Seq(1, 2, 3, 4), 2)
 Collections.partition(Seq(1, 2, 3, 4), 4)
 
 object Math {
+  def fibonacci(n: BigInt): Seq[BigInt] = {
+    def loop(a: BigInt, b: BigInt, i: BigInt, acc: Seq[BigInt]): Seq[BigInt] = i match {
+      case _ if i == BigInt(0) => acc
+      case _ => loop(b, a + b, i - 1, acc :+ a + b)
+    }
+    loop(0, 1, n - 1, Seq(0))
+  }
   def factorial(n: BigInt): BigInt = {
     def loop(n: BigInt, acc: BigInt): BigInt = n match {
       case _ if n == BigInt(1) => acc
@@ -85,6 +92,7 @@ object Math {
     (a * b) / gcd(a, b)
   }
 }
+Math.fibonacci(10)
 Math.factorial(5)
 Math.triangularNumber(5)
 Math.gcd(10, 5)
