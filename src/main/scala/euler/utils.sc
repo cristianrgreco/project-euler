@@ -1,3 +1,26 @@
+import scala.collection.immutable.BitSet
+
+object Primes {
+  def sieve(n: Int): Seq[Int] = {
+    def loop(i: Int, primes: BitSet): Seq[Int] = i match {
+      case _ if i > math.sqrt(n) => primes.toSeq
+      case _ if isPrime(i) => loop(i + 1, primes.filter(p => p <= i || p % i != 0))
+      case _ => loop(i + 1, primes)
+    }
+    loop(2, BitSet(2.to(n): _*))
+  }
+  def isPrime(n: Int): Boolean = {
+    def loop(i: Int): Boolean = i match {
+      case _ if i > math.sqrt(n) => true
+      case _ if n % i == 0 => false
+      case _ => loop(i + 1)
+    }
+    if (n < 2) false
+    else loop(2)
+  }
+}
+Primes.sieve(100).toList
+
 object Strings {
   def permutations(s: String): Seq[String] = {
     def loop(curr: Char, rem: String, res: Seq[String]): Seq[String] = rem.length match {
