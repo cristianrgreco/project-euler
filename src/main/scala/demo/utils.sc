@@ -11,6 +11,7 @@ object Strings {
   }
 }
 Strings.permutations("ABC")
+
 object Palindromes {
   def isPalindrome(s: String): Boolean = {
     if (s.length == 0) false
@@ -22,6 +23,7 @@ object Palindromes {
 }
 Palindromes.isPalindrome("ABABA")
 Palindromes.isPalindrome(12321)
+
 object Factors {
   def all(n: BigInt): Seq[BigInt] = {
     def loop(i: BigInt, factors: Seq[BigInt]): Seq[BigInt] = {
@@ -44,9 +46,14 @@ object Factors {
     }
     loop(BigInt(2), n, Seq.empty)
   }
+  def count(n: BigInt): BigInt = {
+    primes(n).groupBy(identity).map(_._2.length + 1).product
+  }
 }
 Factors.all(BigInt("600851475143"))
 Factors.primes(BigInt("600851475143"))
+Factors.count(BigInt("600851475143"))
+
 object Collections {
   def partition(s: Seq[Any], size: Int): Seq[Seq[Any]] = {
     def loop(rem: Seq[Any], res: Seq[Seq[Any]]): Seq[Seq[Any]] = {
@@ -59,6 +66,7 @@ object Collections {
 }
 Collections.partition(Seq(1, 2, 3, 4), 2)
 Collections.partition(Seq(1, 2, 3, 4), 4)
+
 object Math {
   def factorial(n: BigInt): BigInt = {
     def loop(n: BigInt, acc: BigInt): BigInt = {
